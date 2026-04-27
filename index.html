@@ -447,98 +447,6 @@
             margin: 0 auto 32px;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 28px;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            color: var(--text);
-        }
-
-        .modal h2 {
-            margin-bottom: 24px;
-            font-size: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: var(--darker);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
         /* Admin Panel */
         .admin-panel {
             display: none;
@@ -706,30 +614,6 @@
             transform: translateY(0);
         }
 
-        /* Success message */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .success-message.active {
-            display: block;
-        }
-
-        .success-icon {
-            width: 64px;
-            height: 64px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            color: white;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -781,7 +665,7 @@
                 <a href="#problem" onclick="scrollToSection('problem')">Проблема</a>
                 <a href="#solution" onclick="scrollToSection('solution')">Решение</a>
                 <a href="#personas" onclick="scrollToSection('personas')">Аудитория</a>
-                <button class="btn btn-primary" onclick="openModal()">Пройти анкету</button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSccayTiPVQDsOrMfswnzzGqtG1cQ6MoanvU4gB2HmHU7CRE9A/viewform" target="_blank" class="btn btn-primary">Пройти анкету</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </nav>
@@ -797,9 +681,9 @@
                     <h1>Твой системный путь<br>в киберспорте</h1>
                     <p>Трекер прогресса, персональный план развития и доступ к проверенным тренерам и турнирам в одном приложении</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large" onclick="openModal()">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSccayTiPVQDsOrMfswnzzGqtG1cQ6MoanvU4gB2HmHU7CRE9A/viewform" target="_blank" class="btn btn-primary btn-large">
                             Начать путь
-                        </button>
+                        </a>
                         <button class="btn btn-outline btn-large" onclick="scrollToSection('about')">
                             Узнать больше
                         </button>
@@ -1071,9 +955,9 @@
                 <div class="cta fade-in">
                     <h2>Помоги нам сделать лучше</h2>
                     <p>Пройди короткий опрос и получи ранний доступ к приложению. Твоё мнение поможет создать продукт, который реально нужен</p>
-                    <button class="btn btn-primary btn-large" onclick="openModal()">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccayTiPVQDsOrMfswnzzGqtG1cQ6MoanvU4gB2HmHU7CRE9A/viewform" target="_blank" class="btn btn-primary btn-large">
                         Пройти анкету
-                    </button>
+                    </a>
                     <p style="margin-top: 20px; font-size: 14px; color: var(--text-secondary);">
                         Займёт не более 5 минут
                     </p>
@@ -1081,41 +965,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="container">
-            <div class="admin-header">
-                <div>
-                    <span class="section-label">Админ-панель</span>
-                    <h2 style="font-size: 32px; margin-top: 8px;">Заявки на ранний доступ</h2>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                    <button class="btn btn-outline" onclick="exportToCSV()">Экспорт CSV</button>
-                    <button class="btn btn-primary" onclick="showLanding()">Назад на сайт</button>
-                </div>
-            </div>
-
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalSubmissions">0</div>
-                    <div class="stat-label">Всего заявок</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="playersCount">0</div>
-                    <div class="stat-label">Игроков</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="parentsCount">0</div>
-                    <div class="stat-label">Родителей</div>
-                </div>
-            </div>
-
-            <div class="submissions-list" id="submissionsList">
-                <!-- Submissions will be loaded here -->
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -1126,7 +975,7 @@
                 <a href="#" onclick="scrollToSection('about'); return false;">О проекте</a>
                 <a href="#" onclick="scrollToSection('problem'); return false;">Проблема</a>
                 <a href="#" onclick="scrollToSection('solution'); return false;">Решение</a>
-                <a href="#" onclick="openModal(); return false;">Пройти анкету</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSccayTiPVQDsOrMfswnzzGqtG1cQ6MoanvU4gB2HmHU7CRE9A/viewform" target="_blank">Пройти анкету</a>
                 <a href="#" onclick="showAdmin(); return false;" style="color: var(--text-secondary);">Админ-панель</a>
             </div>
             <div class="copyright">
@@ -1134,80 +983,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Modal -->
-    <div class="modal" id="surveyModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            
-            <div id="formContainer">
-                <h2>Анкета для раннего доступа</h2>
-                <form id="surveyForm" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label>Ваше имя</label>
-                        <input type="text" name="name" required placeholder="Как к вам обращаться?">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Возраст</label>
-                        <input type="number" name="age" required placeholder="Сколько вам лет?" min="10" max="50">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Вы:</label>
-                        <select name="role" required>
-                            <option value="">Выберите вариант</option>
-                            <option value="player">Начинающий киберспортсмен</option>
-                            <option value="semi-pro">Полупрофессионал</option>
-                            <option value="parent">Родитель</option>
-                            <option value="other">Другое</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>В какие игры играете?</label>
-                        <input type="text" name="games" placeholder="Dota 2, CS:GO, Valorant..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Сколько времени тратите на тренировки?</label>
-                        <select name="time" required>
-                            <option value="">Выберите вариант</option>
-                            <option value="1-2">1-2 часа в день</option>
-                            <option value="3-5">3-5 часов в день</option>
-                            <option value="5+">Более 5 часов в день</option>
-                            <option value="weekend">Только выходные</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Какие главные трудности испытываете?</label>
-                        <textarea name="problems" placeholder="Опишите ваши основные проблемы..." required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email для раннего доступа</label>
-                        <input type="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%; justify-content: center;">
-                        Отправить анкету
-                    </button>
-                </form>
-            </div>
-            
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h2>Спасибо!</h2>
-                <p style="color: var(--text-muted); margin-top: 16px;">
-                    Ваша анкета принята. Мы свяжемся с вами когда приложение будет готово!
-                </p>
-                <button class="btn btn-primary" onclick="closeModal()" style="margin-top: 24px;">
-                    Закрыть
-                </button>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Smooth scroll to section
@@ -1237,156 +1012,6 @@
             document.getElementById('mainContent').style.display = 'block';
             document.getElementById('adminPanel').classList.remove('active');
             window.scrollTo(0, 0);
-        }
-
-        // Load submissions
-        function loadSubmissions() {
-            const submissions = JSON.parse(localStorage.getItem('propath_submissions') || '[]');
-            const container = document.getElementById('submissionsList');
-            
-            // Update stats
-            document.getElementById('totalSubmissions').textContent = submissions.length;
-            document.getElementById('playersCount').textContent = submissions.filter(s => s.role === 'player' || s.role === 'semi-pro').length;
-            document.getElementById('parentsCount').textContent = submissions.filter(s => s.role === 'parent').length;
-            
-            if (submissions.length === 0) {
-                container.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--text-muted);"><p>Пока нет заявок</p></div>';
-                return;
-            }
-            
-            container.innerHTML = submissions.slice().reverse().map((sub, index) => `
-                <div class="submission-card">
-                    <div class="submission-header">
-                        <div class="submission-name">${sub.name}</div>
-                        <div style="display: flex; gap: 12px; align-items: center;">
-                            <span class="submission-date">${new Date(sub.timestamp).toLocaleString('ru-RU')}</span>
-                            <button class="delete-btn" onclick="deleteSubmission(${submissions.length - 1 - index})">Удалить</button>
-                        </div>
-                    </div>
-                    <div class="submission-grid">
-                        <div class="submission-field">
-                            <span class="submission-label">Возраст</span>
-                            <span class="submission-value">${sub.age} лет</span>
-                        </div>
-                        <div class="submission-field">
-                            <span class="submission-label">Кто вы</span>
-                            <span class="submission-value">${getRoleText(sub.role)}</span>
-                        </div>
-                        <div class="submission-field">
-                            <span class="submission-label">Игры</span>
-                            <span class="submission-value">${sub.games}</span>
-                        </div>
-                        <div class="submission-field">
-                            <span class="submission-label">Время на тренировки</span>
-                            <span class="submission-value">${getTimeText(sub.time)}</span>
-                        </div>
-                        <div class="submission-field" style="grid-column: 1 / -1;">
-                            <span class="submission-label">Трудности</span>
-                            <span class="submission-value">${sub.problems}</span>
-                        </div>
-                        <div class="submission-field">
-                            <span class="submission-label">Email</span>
-                            <span class="submission-value"><a href="mailto:${sub.email}" style="color: var(--primary);">${sub.email}</a></span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function getRoleText(role) {
-            const roles = {
-                'player': 'Начинающий киберспортсмен',
-                'semi-pro': 'Полупрофессионал',
-                'parent': 'Родитель',
-                'other': 'Другое'
-            };
-            return roles[role] || role;
-        }
-
-        function getTimeText(time) {
-            const times = {
-                '1-2': '1-2 часа в день',
-                '3-5': '3-5 часов в день',
-                '5+': 'Более 5 часов в день',
-                'weekend': 'Только выходные'
-            };
-            return times[time] || time;
-        }
-
-        function deleteSubmission(index) {
-            if (confirm('Удалить эту заявку?')) {
-                const submissions = JSON.parse(localStorage.getItem('propath_submissions') || '[]');
-                submissions.splice(index, 1);
-                localStorage.setItem('propath_submissions', JSON.stringify(submissions));
-                loadSubmissions();
-            }
-        }
-
-        function exportToCSV() {
-            const submissions = JSON.parse(localStorage.getItem('propath_submissions') || '[]');
-            if (submissions.length === 0) {
-                alert('Нет данных для экспорта');
-                return;
-            }
-            
-            const headers = ['Имя', 'Возраст', 'Роль', 'Игры', 'Время', 'Трудности', 'Email', 'Дата'];
-            const rows = submissions.map(s => [
-                s.name,
-                s.age,
-                getRoleText(s.role),
-                s.games,
-                getTimeText(s.time),
-                s.problems.replace(/"/g, '""'),
-                s.email,
-                new Date(s.timestamp).toLocaleString('ru-RU')
-            ]);
-            
-            const csv = [headers.join(';'), ...rows.map(r => r.map(cell => `"${cell}"`).join(';'))].join('\n');
-            const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'propath_submissions.csv';
-            link.click();
-        }
-
-        // Modal functions
-        function openModal() {
-            const modal = document.getElementById('surveyModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            document.getElementById('surveyForm').reset();
-            document.getElementById('formContainer').style.display = 'block';
-            document.getElementById('successMessage').classList.remove('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('surveyModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('surveyModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Form submission
-        function handleSubmit(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            const submissions = JSON.parse(localStorage.getItem('propath_submissions') || '[]');
-            submissions.push({
-                ...data,
-                timestamp: new Date().toISOString()
-            });
-            localStorage.setItem('propath_submissions', JSON.stringify(submissions));
-            
-            document.getElementById('formContainer').style.display = 'none';
-            document.getElementById('successMessage').classList.add('active');
         }
 
         // Mobile menu
@@ -1424,13 +1049,29 @@
             observer.observe(el);
         });
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+        // Active nav link on scroll
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = 'var(--primary)';
+                }
+            });
         });
 
-        console.log('ProPath Landing Page loaded');
+        console.log('ProPath Landing Page loaded successfully');
+        console.log('Google Form link: https://docs.google.com/forms/d/e/1FAIpQLSccayTiPVQDsOrMfswnzzGqtG1cQ6MoanvU4gB2HmHU7CRE9A/viewform');
     </script>
 </body>
 </html>
